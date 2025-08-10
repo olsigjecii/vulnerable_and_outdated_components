@@ -1,0 +1,9 @@
+[package]
+name = "vulnerable_and_outdated_components"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4.3.1"
+serde = { version = "1.0", features = ["derive"] }
+url = "2.3.1"
