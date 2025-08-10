@@ -131,13 +131,13 @@ Success\! The `url` crate correctly identified `169.254.169.254` as the true hos
 
 ### 🔑 4. Key Takeaways & Prevention
 
-1.  **Dependency Awareness**: Always be aware of the dependencies (and transitive dependencies) in your project[cite: 59]. An unmaintained library is a security risk[cite: 10, 11].
-2.  **Use Security Scanners**: For Rust projects, `cargo audit` is an essential tool for checking your dependencies against a database of known security vulnerabilities[cite: 61, 70]. It's the equivalent of `npm audit` or `snyk test`[cite: 61].
+1.  **Dependency Awareness**: Always be aware of the dependencies (and transitive dependencies) in your project. An unmaintained library is a security risk.
+2.  **Use Security Scanners**: For Rust projects, `cargo audit` is an essential tool for checking your dependencies against a database of known security vulnerabilities. It's the equivalent of `npm audit` or `snyk test`.
     ```sh
     cargo install cargo-audit
     cargo audit
     ```
-3.  **Keep Dependencies Updated**: Regularly update your dependencies to receive security patches. Timely patching is a vital part of security posture[cite: 14].
+3.  **Keep Dependencies Updated**: Regularly update your dependencies to receive security patches. Timely patching is a vital part of security posture.
 4.  **Prefer Standard Libraries**: For critical operations like cryptography, authentication, and URL parsing, always prefer battle-tested, standard libraries over implementing your own logic.
 
 <!-- end list -->
