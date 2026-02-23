@@ -1,5 +1,6 @@
-# This guide demonstrates how to run, exploit, and fix a vulnerability related to outdated components using a sample Rust application.
+# Vulnerable and Outdated Components in Rust 🦀
 
+This guide demonstrates how to run, exploit, and fix a vulnerability related to outdated components using a sample Rust application.
 
 ## ⚙️ 1. Build and Run the Server
 
@@ -17,7 +18,7 @@ You should see the following output, and the server will be running at `http://1
 
 🚀 Server starting at [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
------
+---
 
 ### 💥 2. Demonstrate the Vulnerability
 
@@ -52,9 +53,9 @@ Vulnerable check: Parsed host as 'example.com'
 The vulnerable check is smart enough to block a direct attempt.
 
 ```sh
-curl -X POST 
+curl -X POST
 -H "Content-Type: application/json" \
--d '{"url": "http://169.254.169.254/latest/meta-data/"}' \ 
+-d '{"url": "http://169.254.169.254/latest/meta-data/"}' \
 http://127.0.0.1:8080/vulnerable/fetch_resource
 ```
 
@@ -96,7 +97,7 @@ Vulnerable check: Parsed host as 'safelooking.com'
 
 As you can see, our check was successfully bypassed\! The application would now make a request to the forbidden IP, potentially leaking sensitive cloud credentials.
 
------
+---
 
 ### 🛡️ 3. Demonstrate the Mitigation
 
@@ -127,7 +128,7 @@ Secure check: Parsed host as '169.254.169.254'
 
 Success\! The `url` crate correctly identified `169.254.169.254` as the true host, and our security check successfully blocked the request.
 
------
+---
 
 ### 🔑 4. Key Takeaways & Prevention
 
@@ -143,4 +144,5 @@ Success\! The `url` crate correctly identified `169.254.169.254` as the true hos
 <!-- end list -->
 
 ```
+
 ```
